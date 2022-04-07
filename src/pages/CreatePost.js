@@ -1,20 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
+// import Select from 'react-select'
+var moment = require('moment');
 
 function CreatePost({ isAuth }) {
+
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
-
+  const [tag, setTag] = useState("");
+  // const [myDate, setDate] = useState("");
+  
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
 
   const createPost = async () => {
+    let date = moment().format("d/MM/YY Do, h:mm")
+    
     await addDoc(postsCollectionRef, {
       title,
       postText,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      tag,
+      myDate: date
     });
     navigate("/");
   };
@@ -45,11 +54,36 @@ function CreatePost({ isAuth }) {
             onChange={(event) => {
               setPostText(event.target.value);
             }}
+
           />
         </div>
-        <button onClick={createPost}> Submit Post</button>
+        <div className="inputGp">
+          {/* <label> Post:</label> */}
+
+          <select value={tag}  
+          onChange={e => 
+              setTag(e.target.value)}>
+            {/* // placeholder="Tag..."
+            // onChange={(event) => { */}
+            {/* //   setTag(event.options);
+            // }} */}
+
+
+
+          <option>chocolate</option>
+          <option>strawberry</option>
+          <option>vanilla</option>
+          <option>chocolate</option>
+          <option>strawberry</option>
+          
+        </select>
       </div>
+      <div className="">
+        <input type="file" id="file-input" name="ImageStyle" />
+      </div>
+      <button onClick={createPost}> Submit Post</button>
     </div>
+    </div >
   );
 }
 
