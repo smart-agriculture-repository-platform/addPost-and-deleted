@@ -152,7 +152,7 @@ function ShowAcc({ isAuth }) {
           // <button onClick={shoot}>
 
 
-          <Link to={`${post.id}`}>
+          <Link to={`${post?.id}`}>
 
 
 
@@ -160,13 +160,13 @@ function ShowAcc({ isAuth }) {
               {/* <h1>{auth.currentUser.uid}</h1> */}
               <div className="postHeader">
                 <div className="title">
-                  <h1> {post.title}</h1>
+                  <h1> {post?.title}</h1>
                 </div>
                 <div className="deletePost">
-                  {isAuth && post.author.id === auth.currentUser.uid && (
+                  {isAuth && post?.author.id === auth.currentUser.uid && (
                     <button
                       onClick={() => {
-                        deletePost(post.id);
+                        deletePost(post?.id);
                       }}
                     >
                       {" "}
@@ -177,11 +177,11 @@ function ShowAcc({ isAuth }) {
               </div>
               {/* )} */}
               {/* {isAuth && post.author.id === auth.currentUser.uid && ( */}
-              <div className="postTextContainer"> {post.postText} </div>
+              <div className="postTextContainer"> {post?.postText} </div>
               {/* )} */}
               {/* {isAuth && post.author.id === auth.currentUser.uid && ( */}
-              <h4>Author: {post.author.name}</h4>
-              <h4>{post.myDate}</h4>
+              <h4>Author: {post?.author.name}</h4>
+              <h4>{post?.myDate}</h4>
               {/* <h4>{post.author.id}</h4> */}
               {/* )} */}
             </div>

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import PagePost from '../src/pages/PagePost';
+import Addim from '../src/pages/Addim';
 
 
 
@@ -30,26 +31,44 @@ function App() {
 
         {!isAuth ? (
           <Link to="/login"> Login </Link>
-        ) : (
-          <>
-            <Link to="/createpost"> Create Post </Link>
-            <Link to="/user"> Account </Link>
-            <button onClick={signUserOut}> Log Out</button>
+        )
+          : (
+            <>
 
-          </>
+              <Link to="/createpost"> Create Post </Link>
+              <Link to="/user"> Account </Link>
+              <button onClick={signUserOut}> Log Out</button>
 
-        )}
+            </>
+
+
+
+
+          )}
       </nav>
+
+
+
+
       <Routes>
+        <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/posts" element={<Home isAuth={isAuth} />} />
+        <Route path="/a" element={<Addim isAuth={isAuth} />} />
         <Route path="/detail" element={<Detail isAuth={isAuth} />} />
         <Route path="/user" element={<ShowAcc isAuth={isAuth} />} />
-        <Route path="posts/:postId" element={<PagePost isAuth={isAuth}/>} />
-        <Route path="user/:postId" element={<PagePost isAuth={isAuth}/>} />
+        <Route path="posts/:postId" element={<PagePost isAuth={isAuth} />} />
+        <Route path="/:postId" element={<PagePost isAuth={isAuth} />} />
+        <Route path="user/:postId" element={<PagePost isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
     </Router>
+
+
+
+
+
+
   );
 }
 

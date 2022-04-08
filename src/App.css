@@ -10,8 +10,8 @@ body {
 nav {
   margin: 0;
   width: 100%;
-  height: 80px;
-  background-color: black;
+  height: 100px;
+  background-color: rgb(10, 100, 37);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +25,14 @@ a {
   margin: 10px;
   font-size: 25px;
 }
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.5rem;
+  color: rgb(0, 0, 0);
+}
+
 
 .createPostPage {
   width: 100%;
@@ -37,7 +45,7 @@ a {
   width: 500px;
   height: auto;
   padding: 20px;
-  background-color: black;
+  background-color: rgb(126, 24, 24);
   border-radius: 12px;
   color: white;
   display: flex;
@@ -45,14 +53,15 @@ a {
 }
 
 .cpContainer h1 {
-  text-align: center;
+  text-align: center   ;
+  font-size: 2.5rem;
 }
 
 .cpContainer label {
   font-size: 25px;
 }
 .cpContainer .inputGp {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -69,10 +78,18 @@ a {
   height: 40px;
 }
 .inputGp textarea {
-  height: 150px;
+  height: 300px;
 }
 
 .cpContainer button {
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.cpContainer select {
   margin-top: 20px;
   height: 40px;
   border: none;
@@ -148,11 +165,46 @@ textarea {
   width: 600px;
   height: auto;
   max-height: 600px;
-  background-color: rgb(20, 127, 54);
+  background-color: rgb(13, 94, 39);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
+}
+
+/* .homePage .search { */
+  /* width: 1200px;
+  height: auto;
+  max-height: 600px;
+  background-color: rgb(107, 107, 107);
+  box-shadow: rgba(58, 58, 58, 0.24) 0px 3px 8px;
+  margin: 0px;
+  padding:20px;
+  border-radius: px; */
+
+
+  /* margin: -20px;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(10, 100, 37);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none; */
+/* } */
+
+input {
+  width: 400px;
+  height: auto;
+  max-height: 600px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(126, 47, 47, 0.24) 0px 3px 8px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+
 }
 
 .userPage{
@@ -165,6 +217,17 @@ textarea {
   padding-top: 20px;
 }
 .userPage .post {
+  /* display: flex; */
+  width: 600px;
+  height: auto;
+  max-height: 600px;
+  background-color: rgb(12, 142, 107);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+/* .userPage .h {
   width: 600px;
   height: auto;
   max-height: 600px;
@@ -173,14 +236,14 @@ textarea {
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
-}
+} */
 
 
 .userPage .text{
   width: 1000px;
   height: auto;
   max-height: 200px;
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(171, 171, 171);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 10px;
   padding: 10px;
@@ -234,7 +297,7 @@ textarea {
 
 
 
-.postTextSingle {
+/* .postTextSingle {
   width:2000px;
   height: auto;
   max-height: 600px;
@@ -252,4 +315,4 @@ textarea {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
-}
+} */
